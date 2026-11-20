@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎂 BirthdayBlast — Anu</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="bg"></div>
+<div class="stars" id="stars"></div>
+<div class="aurora a1"></div>
+<div class="aurora a2"></div>
+<div class="aurora a3"></div>
+
+<!-- ══ HOME ══ -->
+<div class="screen active" id="homeScreen">
+  <div class="home-wrap">
+    <h1 class="app-name">BirthdayBlast ✨</h1>
+    <p class="app-tagline">Create magical birthday surprises 🎂</p>
+
+    <div class="home-hero">
+      <div class="home-hero-rings">
+        <div class="hring"></div>
+        <div class="hring"></div>
+        <div class="hring"></div>
+      </div>
+      <div class="home-photo-frame">
+        <div class="home-photo-outer">
+          <div class="home-photo-inner">
+            <img src="images/home-photo.jpg" alt="Anu"/>
+          </div>
+        </div>
+      </div>
+      <div class="deco" style="top:10px;left:20px;--df:2s;">👑</div>
+      <div class="deco" style="top:10px;right:20px;--df:2.5s;">⭐</div>
+      <div class="deco" style="bottom:20px;left:15px;--df:1.8s;">🌸</div>
+      <div class="deco" style="bottom:20px;right:15px;--df:2.2s;">💖</div>
+    </div>
+
+    <div class="feature-row">
+      <span class="pill">🎆 Fireworks</span>
+      <span class="pill">🌈 Aurora</span>
+      <span class="pill">💖 Hearts</span>
+      <span class="pill">🎊 Confetti</span>
+      <span class="pill">👑 Crown</span>
+      <span class="pill">✨ Glitter</span>
+    </div>
+    <button class="btn-primary" onclick="go('formScreen')">🚀 Launch Surprise</button>
+    <p style="margin-top:12px;color:rgba(255,255,255,0.2);font-size:0.75rem;">Free · Beautiful · Shareable</p>
+  </div>
+</div>
+
+<!-- ══ FORM ══ -->
+<div class="screen" id="formScreen">
+  <div class="form-card">
+    <button class="back-btn" onclick="go('homeScreen')">← Back</button>
+    <div class="form-top">
+      <div class="form-icon">🥳</div>
+      <h2 class="form-title">Birthday Star?</h2>
+      <p class="form-sub">Pre-filled — just tap Reveal!</p>
+    </div>
+    <div class="input-label">✦ Name of the birthday star</div>
+    <div class="input-wrap">
+      <span style="font-size:1.1rem;margin-right:10px;">🌟</span>
+      <input type="text" id="nameInput" value="Anu" maxlength="40" onkeydown="if(event.key==='Enter')launch()"/>
+    </div>
+    <button class="btn-primary" onclick="launch()">🎉 Reveal Surprise!</button>
+    <p class="form-hint">✦ Press Enter or tap above ✦</p>
+  </div>
+</div>
+
+<!-- ══ SURPRISE ══ -->
+<div class="screen" id="surpriseScreen">
+  <div class="surprise-wrap">
+  <div class="surprise-card">
+
+    <!-- GORGEOUS SINGLE PHOTO -->
+    <div class="photo-section">
+      <div class="photo-glow-ring"></div>
+
+      <!-- glitter dots -->
+      <div class="glitter" style="width:8px;height:8px;background:#ffe070;top:10px;left:30px;box-shadow:0 0 8px #ffe070;--gd:1.2s;"></div>
+      <div class="glitter" style="width:6px;height:6px;background:#ff4fa7;top:20px;right:25px;box-shadow:0 0 6px #ff4fa7;--gd:0.9s;"></div>
+      <div class="glitter" style="width:10px;height:10px;background:#7effda;bottom:30px;left:20px;box-shadow:0 0 10px #7effda;--gd:1.5s;"></div>
+      <div class="glitter" style="width:7px;height:7px;background:#c15bff;bottom:20px;right:30px;box-shadow:0 0 8px #c15bff;--gd:1.1s;"></div>
+      <div class="glitter" style="width:5px;height:5px;background:#fff;top:50%;left:10px;box-shadow:0 0 5px #fff;--gd:0.8s;"></div>
+      <div class="glitter" style="width:5px;height:5px;background:#fff;top:40%;right:10px;box-shadow:0 0 5px #fff;--gd:1.3s;"></div>
+
+      <div class="photo-frame"><img src="images/surprise-photo.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center 8%;display:block;filter:brightness(1.08) contrast(1.06) saturate(1.15);"></div>
+
+      <!-- corner decorations -->
+      <div class="corner-deco" style="top:-8px;left:50%;transform:translateX(-50%);--cf:1.2s;">👑</div>
+      <div class="corner-deco" style="top:20px;left:5px;font-size:1.2rem;--cf:1.8s;">✨</div>
+      <div class="corner-deco" style="top:20px;right:5px;font-size:1.2rem;--cf:2s;">⭐</div>
+      <div class="corner-deco" style="bottom:28px;left:8px;font-size:1.1rem;--cf:1.5s;">💖</div>
+      <div class="corner-deco" style="bottom:28px;right:8px;font-size:1.1rem;--cf:1.7s;">🌸</div>
+
+      <div class="ribbon">🌟 Princess Anu 🌟</div>
+    </div>
+
+    <div style="margin-top:20px;"></div>
+    <div class="hb-badge">🎂 &nbsp; Happy Birthday &nbsp; 🎂</div>
+    <div class="wish-name" id="wishName"></div>
+    <div class="sub-tag">✦ Today is YOUR magical day ✦</div>
+
+    <div class="emoji-row" id="emojiRow"></div>
+
+    <div class="wish-card">
+      <p class="wish-text" id="wishMsg"></p>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-box"><div class="stat-icon">🎁</div><div class="stat-label">Wishes</div><div class="stat-val">Endless</div></div>
+      <div class="stat-box"><div class="stat-icon">💖</div><div class="stat-label">Love</div><div class="stat-val">Infinite</div></div>
+      <div class="stat-box"><div class="stat-icon">✨</div><div class="stat-label">Magic</div><div class="stat-val">Always</div></div>
+      <div class="stat-box"><div class="stat-icon">👑</div><div class="stat-label">She is</div><div class="stat-val">Princess</div></div>
+    </div>
+
+    <div class="action-row">
+      <button class="btn-home" onclick="go('homeScreen')">🏠 Home</button>
+      <button class="btn-memory" onclick="openMemory()">🌙 Memories</button>
+      <button class="btn-new" onclick="launch()">🎊 New Wish</button>
+    </div>
+  </div>
+  </div>
+</div>
+
+
+<!-- MEMORY SCREEN -->
+<div class="screen" id="memoryScreen">
+  <div class="memory-wrap">
+    <div class="memory-card">
+      <button class="back-btn" onclick="go('surpriseScreen')">← Back</button>
+      <div class="memory-header">
+        <div class="mem-moon">🌙</div>
+        <div class="mem-title">Our Sweet Memories</div>
+        <div class="mem-sub">✨ Every moment, treasured forever ✨</div>
+      </div>
+
+      <!-- Slideshow -->
+      <div class="slideshow-wrap">
+        <div class="slide-glow-ring"></div>
+        <div class="slide-stars" id="slideStars"></div>
+        <div class="slide-frame" id="slideFrame">
+          <img id="slideImg" src="" alt="memory" />
+          <div class="slide-overlay"></div>
+        </div>
+        <div class="slide-counter" id="slideCounter">1 / 10</div>
+        <div class="slide-nav">
+          <button class="nav-btn" onclick="prevSlide()">&#8249;</button>
+          <button class="nav-btn play-btn" id="playBtn" onclick="togglePlay()">▶</button>
+          <button class="nav-btn" onclick="nextSlide()">&#8250;</button>
+        </div>
+      </div>
+
+      <!-- Dot indicators -->
+      <div class="dot-row" id="dotRow"></div>
+
+      <!-- Thumbnail strip -->
+      <div class="thumb-strip" id="thumbStrip"></div>
+
+      <div class="mem-footer">💖 Happy Birthday Anu 💖</div>
+    </div>
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
